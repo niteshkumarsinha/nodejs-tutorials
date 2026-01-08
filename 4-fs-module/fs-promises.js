@@ -68,3 +68,30 @@ fs.promises
     .catch((err) => {
         console.error(err);
     });
+
+fs.promises.appendFile(filePath + "/test.txt", "\nHello World", "utf8"  )
+    .then(() => {
+        console.log("File appended successfully");
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+
+fs.promises
+    .copyFile(filePath + "/test.txt", "test_copy.txt")
+    .then(() => {
+        console.log("File copied successfully");
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+
+fs.promises
+    .unlink(filePath + "/test.txt")
+    .then(() => {
+        console.log("File deleted successfully");
+    })
+    .catch((err) => {
+        console.error(err);
+    });
+    
